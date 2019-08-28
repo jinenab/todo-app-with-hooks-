@@ -1,6 +1,33 @@
-.Todo{
-    margin-left: 150px;
-    margin-top: 50px
+.Navbar{
+    height: 500px;
+    width: 140px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+
+color: white
+   }
+   .NavbarContent{
+       display: flex;
+       div{
+       height:  40px;
+        background-color: black;
+        width: 100%;   
+        margin: 10px 0px;
+       }
+       flex-direction: column;
+    height: 80px;
+.User{
+    height: 80px;
+
+}
+   }
+   .Todo{
+    width: 900px;
+    height: 500px;
+    position: absolute;
+    display: inline-block;
+    margin: 0px;
 }
 h1{
   
@@ -49,4 +76,25 @@ ul{
 .Done{
     background-color: green;
     color: white
+}
+.Todocontent{
+    margin: 130px
+}
+
+.User{
+    h5{margin:20px;
+       font-size: 10px;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+   
+    }
+    h6{margin:15px;
+        font-size: 8px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    
+     }
+}
+.Filters{
+    display: flex;
+    flex-direction: column;
+     margin: 0px;
 }
