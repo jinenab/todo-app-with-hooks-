@@ -10,12 +10,14 @@ return(<div className="main">
 <div className="NavbarContent"><div className="User">   <h5>Abdelhak Jinen</h5>
 <h6>jinenab123@gmail.com</h6></div>
 
-<div className="All"><h6>All</h6></div>
+<div className="All"><p>All</p></div>
 
-<div className="Filters"></div>
+<div className="Filters">
 <div className="Dones"><p>Done</p></div>
 <div className="Deleted"><p>Deleted</p></div>
 <div className="Starred"><p>Starred</p></div>
+</div>
+
 </div>
 
 </div>
