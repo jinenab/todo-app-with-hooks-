@@ -1,3 +1,8 @@
+import DoneIcon from '@material-ui/icons/Done';
+import FaceIcon from '@material-ui/icons/Done';
+import { makeStyles } from '@material-ui/core/styles';
+
+import Chip from '@material-ui/core/Chip';
 import  "./style.scss"
 import React , {useState} from "react"
 function Todo(){
@@ -70,12 +75,27 @@ return(<div className="main">
      
      
      dones.map(element=>
-     ( <li>{element}
+     ( <li>
+
+<Chip 
+        variant="outlined"
+        size="small"
+        icon={<FaceIcon />}
+        label={element}
+        clickable
+        className={makeStyles().chip}
+        //color="primary"
+        deleteIcon={<DoneIcon />}
+      
+      />
+
      </li>))
       
      
      }
   </ul>
+ 
+  
 
   <p>Deleted</p>
   <ul className="deletedTodos">
