@@ -4,34 +4,8 @@ function Todo(){
 const [item,setItem]=useState("")
 const [items,setItems]=useState([])
 const [dones,setDones]=useState([])
+const [deleted,setDeleted]=useState([])
 const [visible,setVisible]=useState("all")
-const todoDones= <ul>
-{dones.length===0? <p>No Dones Yet</p>:
-  dones.map((done,index)=>(
-  <li>{done}</li>
-  ))
-}
-</ul>
-const todoAll=<ul className="items">{ items.length===0?<p>No Todos To Do</p>  :
-  items.map((item,index)=>(
-    <li className="item"  key={index}><div>{item}</div>
-  <button className="Delete" onClick={()=>{
-
-    const newItems=items.filter((item,ind)=>(ind!==index))
-  setItems(newItems)
-  }}>Delete</button>
-  <button className="Done" onClick={()=>{
-      const newDones=items.filter((item,ind)=>(ind===index))
-
-      setDones([...newDones,...dones])
-      const newItems=items.filter((item,ind)=>(ind!==index))
-      setItems(newItems)
-  }}>Done</button>
-
-  </li >))
-}</ul>
-
-
 return(<div className="main">
 
 <div className="Navbar">
@@ -39,14 +13,14 @@ return(<div className="main">
 <div className="NavbarContent"><div className="User">   <h5>Abdelhak Jinen</h5>
 <h6>jinenab123@gmail.com</h6></div>
 
-<div className="All"><button   onClick={()=>{}}>All</button>
+<div className="All"><button   onClick={()=>{setVisible("all")}}>All</button>
 
 </div>
 
 <div className="Filters">
 <div className="Dones"><button  onClick={()=>{setVisible("dones")}}>Dones</button></div>
-<div className="Deleted"><button>Deleted</button></div>
-<div className="Starred"><button>Starred</button></div>
+<div className="Deleted"  onClick={()=>{setVisible("deleted")}}><button>Deleted</button></div>
+<div className="Starred"  onClick={()=>{setVisible("starred")}}><button>Starred</button></div>
 </div>
 
 </div>
@@ -66,12 +40,17 @@ return(<div className="main">
     console.log(items)
   }}>Add</button>
   {
-   visible==="all"?<ul className="items">{ items.length===0?<p>No Todos To Do</p>  :
+   visible==="all"?
+   <div>
+   <ul className="items">{ items.length===0?<p>No Todos To Do</p>  :
     items.map((item,index)=>(
       <li className="item"  key={index}><div>{item}</div>
     <button className="Delete" onClick={()=>{
-  
+  const newDeleted=items.filter((item,ind)=>(ind===index))
+  setDeleted([...newDeleted,...deleted])
+
       const newItems=items.filter((item,ind)=>(ind!==index))
+
     setItems(newItems)
     }}>Delete</button>
     <button className="Done" onClick={()=>{
@@ -83,7 +62,36 @@ return(<div className="main">
     }}>Done</button>
   
     </li >))
-  }</ul>:""
+    
+  }</ul>
+  <p>Dones:</p>
+  <ul>
+    {
+     
+     
+     dones.map(element=>
+     ( <li>{element}</li>))
+      
+     
+     }
+  </ul>
+
+  <p>Deleted</p>
+  <ul>
+    {
+     
+     
+     deleted.map(element=>
+     ( <li>{element}</li>))
+      
+     
+     }
+  </ul>
+  </div>
+  :""
+
+
+
   }
 {
   visible==="dones"?<ul>
@@ -94,7 +102,15 @@ return(<div className="main">
   }
   </ul>:""
 }
-
+{
+  visible==="deleted"?<ul>
+  {deleted.length===0? <p>No Deleted Yet</p>:
+    deleted.map((del,index)=>(
+    <li>{del}</li>
+    ))
+  }
+  </ul>:""
+}
   </div>
 </div>
 </div>
