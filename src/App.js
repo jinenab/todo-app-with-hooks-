@@ -1,6 +1,7 @@
 import DoneIcon from '@material-ui/icons/Done';
 import FaceIcon from '@material-ui/icons/Done';
 import { makeStyles } from '@material-ui/core/styles';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 import Chip from '@material-ui/core/Chip';
 import  "./style.scss"
@@ -65,7 +66,10 @@ return(<div className="main">
         const newItems=items.filter((item,ind)=>(ind!==index))
         setItems(newItems)
     }}>Complete</button>
-  
+     <StarBorderIcon>
+    
+    </StarBorderIcon>
+   
     </li >))
     
   }</ul>

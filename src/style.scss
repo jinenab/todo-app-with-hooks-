@@ -154,4 +154,22 @@ display: flex;
 flex-direction: column;
     }
 }
+.MuiSvgIcon-root{
+    fill:gold !important;
+    height: 20px;
+   
+}
+.item{
 
+    .MuiSvgIcon-root{
+     margin-left: 10px;  
+margin-bottom: -6px;
+border: 0px;
+padding: 0px;
+height: 20px;
+    }
+    .MuiSvgIcon-root:hover{
+  background-color:gold;
+  fill:white !important;
+       }
+}
