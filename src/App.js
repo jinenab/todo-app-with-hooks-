@@ -66,8 +66,12 @@ return(<div className="main">
         setItems(newItems)
     }}>Complete</button>
      <StarBorderIcon onClick={()=>{
-       setStarred([...stars,item])
-     }}>
+       
+       const starred=stars.filter((star,ind)=>(star===item))
+
+       starred.length===0? setStarred([...stars,item]):alert("Already starred")
+    
+}}>
     
     </StarBorderIcon>
    
