@@ -69,7 +69,7 @@ return(<div className="main">
     </li >))
     
   }</ul>
-  <p>Dones:</p>
+
   <ul className="donesTodos">
     {
      
@@ -83,25 +83,14 @@ return(<div className="main">
      
      }
   </ul>
- 
-  
-
-  <p>Deleted</p>
   <ul className="deletedTodos">
     {
-     
-     
      deleted.map(element=>
-     ( <li>{element}</li>))
-      
-     
+     ( <li> <Chip label={element} variant="outlined" clickable size="medium"  /></li>))
      }
   </ul>
   </div>
   :""
-
-
-
   }
 {
   visible==="dones"?<ul>
