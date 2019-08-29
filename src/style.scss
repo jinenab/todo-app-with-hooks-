@@ -168,8 +168,9 @@ border: 0px;
 padding: 0px;
 height: 20px;
     }
-    .MuiSvgIcon-root:hover{
+    .MuiSvgIcon-root:hover,click{
   background-color:gold;
   fill:white !important;
        }
+    
 }

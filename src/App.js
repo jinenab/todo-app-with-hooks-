@@ -1,6 +1,4 @@
-import DoneIcon from '@material-ui/icons/Done';
-import FaceIcon from '@material-ui/icons/Done';
-import { makeStyles } from '@material-ui/core/styles';
+
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 import Chip from '@material-ui/core/Chip';
@@ -12,6 +10,7 @@ const [items,setItems]=useState([])
 const [dones,setDones]=useState([])
 const [deleted,setDeleted]=useState([])
 const [visible,setVisible]=useState("all")
+const [stars,setStarred]=useState([])
 return(<div className="main">
 
 <div className="Navbar">
@@ -66,7 +65,9 @@ return(<div className="main">
         const newItems=items.filter((item,ind)=>(ind!==index))
         setItems(newItems)
     }}>Complete</button>
-     <StarBorderIcon>
+     <StarBorderIcon onClick={()=>{
+       setStarred([...stars,item])
+     }}>
     
     </StarBorderIcon>
    
@@ -110,6 +111,15 @@ return(<div className="main">
   {deleted.length===0? <p>No Deleted Yet</p>:
     deleted.map((del,index)=>(
     <li>{del}</li>
+    ))
+  }
+  </ul>:""
+}
+{
+  visible==="starred"?<ul>
+  {stars.length===0? <p>No Starred Yet</p>:
+    stars.map((star,index)=>(
+    <li>{star}</li>
     ))
   }
   </ul>:""
