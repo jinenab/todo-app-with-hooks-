@@ -17,13 +17,10 @@
        display: flex;
        .All{
            p{
-        height:  20px;
-        margin: 4px 40px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    }}
-
-       
+            height:  20px;
+            margin: 4px 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    }} 
        .Filters{
-
            background-color: white
        }
        div{
@@ -33,7 +30,6 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    }}
         div{
             margin: 10 0px;
             background-color: black;
-
         }
        }
        flex-direction: column;
@@ -104,12 +100,14 @@ ul{
 }
 
 .User{
-    h5{margin:20px;
+    h5{
+       margin:20px;
        font-size: 10px;
        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
    
     }
-    h6{margin:15px;
+    h6{
+        margin:15px;
         font-size: 8px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     
@@ -122,5 +120,15 @@ ul{
     p{ 
         height:  20px;
         margin: 4px 40px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    }
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    }
+}
+
+
+allTodos{
+    donesTodos{
+        background-color: aqua;
+    }
+    deletedTodos{
+        
+    }
 }

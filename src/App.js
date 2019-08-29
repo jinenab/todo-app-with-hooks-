@@ -41,7 +41,7 @@ return(<div className="main">
   }}>Add</button>
   {
    visible==="all"?
-   <div>
+   <div className="allTodos">
    <ul className="items">{ items.length===0?<p>No Todos To Do</p>  :
     items.map((item,index)=>(
       <li className="item"  key={index}><div>{item}</div>
@@ -65,7 +65,7 @@ return(<div className="main">
     
   }</ul>
   <p>Dones:</p>
-  <ul>
+  <ul className="donesTodos">
     {
      
      
@@ -77,7 +77,7 @@ return(<div className="main">
   </ul>
 
   <p>Deleted</p>
-  <ul>
+  <ul className="deletedTodos">
     {
      
      
