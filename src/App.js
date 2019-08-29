@@ -34,6 +34,7 @@ return(<div className="main">
 
   <div className="Todo">
     <div className="Todocontent">
+    {visible==="all"?<div>
     <h1>Todo App</h1>
     <input value={item} placeholder="Enter a value" onChange={(e)=>{setItem(e.target.value)}}></input>
     <button className="Add" onClick={()=>{
@@ -44,6 +45,7 @@ return(<div className="main">
     setItem("")
     console.log(items)
   }}>Add</button>
+  </div>:""}
   {
    visible==="all"?
    <div className="allTodos">
@@ -67,7 +69,7 @@ return(<div className="main">
     }}>Complete</button>
      <StarBorderIcon onClick={()=>{
        
-       const starred=stars.filter((star,ind)=>(star===item))
+       const starred=stars.filter(star=>(star===item))
 
        starred.length===0? setStarred([...stars,item]):alert("Already starred")
     
