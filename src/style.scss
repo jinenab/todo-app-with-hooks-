@@ -68,7 +68,7 @@ border-width: 2px;
 border-style: double;
 border-color: white;
 margin: 5px;
-width: 55px;
+width: 70px;
 
 }
 li{
@@ -124,11 +124,13 @@ ul{
 }
 
 
-allTodos{
-    donesTodos{
-        background-color: aqua;
+.allTodos{
+    .donesTodos{
+        button{
+            width: 50px;
+        }
     }
-    deletedTodos{
-        
+    .deletedTodos{
+text-decoration: line-through;
     }
 }

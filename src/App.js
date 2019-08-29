@@ -59,7 +59,7 @@ return(<div className="main">
         setDones([...newDones,...dones])
         const newItems=items.filter((item,ind)=>(ind!==index))
         setItems(newItems)
-    }}>Done</button>
+    }}>Complete</button>
   
     </li >))
     
@@ -70,7 +70,8 @@ return(<div className="main">
      
      
      dones.map(element=>
-     ( <li>{element}</li>))
+     ( <li>{element}
+     </li>))
       
      
      }
