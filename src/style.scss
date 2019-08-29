@@ -126,6 +126,8 @@ ul{
 
 .allTodos{
     .donesTodos{
+        display: flex;
+        flex-direction: column;
         button{
             width: 50px;
         }
@@ -133,4 +135,11 @@ ul{
     .deletedTodos{
 text-decoration: line-through;
     }
+}
+
+.MuiChip-clickable {    background-color: green !important;
+    color: white !important;
+    margin: 10px;
+    width: 200px;
+    overflow:auto;
 }

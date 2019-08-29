@@ -76,18 +76,7 @@ return(<div className="main">
      
      dones.map(element=>
      ( <li>
-
-<Chip 
-        variant="outlined"
-        size="small"
-        icon={<FaceIcon />}
-        label={element}
-        clickable
-        className={makeStyles().chip}
-        //color="primary"
-        deleteIcon={<DoneIcon />}
-      
-      />
+      <Chip label={element} variant="outlined" clickable size="medium"  />
 
      </li>))
       
