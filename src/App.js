@@ -84,17 +84,19 @@ return(<div className="main">
      
 
 
-    </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?<li className="deletedTodos">
+    </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?
+    <li className="deleteditem">
       {/* <Chip label={item} variant="outlined" clickable size="medium"  /> */}
 {item }
 {
-  stars.filter((star)=>(star===item).length)!==0?  <StarBorderIcon>
+  stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon>
  </StarBorderIcon> :""} 
-     </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?<li className="donesTodos">
+     </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?
+     <li className="doneitem">
       {/* <Chip label={item} variant="outlined" clickable size="medium"  /> */}
 {item}
 {
-  stars.filter((star)=>(star===item).length)!==0?  <StarBorderIcon>
+  stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon>
  </StarBorderIcon> :""} 
      </li>:""))  
   }</ul>
