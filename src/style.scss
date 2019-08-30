@@ -186,14 +186,7 @@ fill:gold !important;
         background-color: #f9f9f9;
         //color: white;
         width: 320px;
-   .deleteditem{
-    display: flex;
-    flex-direction: row;
 
-
-
-  
-   }
    .doneitem{
     display: flex;
     flex-direction: row;
@@ -203,10 +196,20 @@ fill:gold !important;
         }
         .items {
             .deleteditem
-{     text-decoration: line-through;
+{     
 }
 
 
         }
 
 }
+
+.deleteditem{
+    display: flex;
+    flex-direction: row;
+    text-decoration: line-through;
+    .MuiSvgIcon-root{
+        fill: gold !important;
+        margin: -5px 6px;
+    }
+   }

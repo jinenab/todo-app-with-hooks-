@@ -136,8 +136,7 @@ return(<div className="main">
   {stars.length===0? <p>No Starred Yet</p>:
     stars.map((star,index)=>(
     <li>{star}
-             <StarBorderIcon>
- </StarBorderIcon>
+  
     </li>
     ))
   }
