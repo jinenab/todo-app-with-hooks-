@@ -64,21 +64,30 @@ return(<div className="main">
     }}>Delete</button>
     <button className="Done" onClick={()=>{
         const newDones=items.filter((item,ind)=>(ind===index))
-  
         setDones([...newDones,...dones])
-        // const newItems=items.filter((item,ind)=>(ind!==index))
-        // setItems(newItems)
+  
     }}>Complete</button>
 
   {      stars.filter(star=>(star===item)).length===0?
-      <StarBorderIcon onClick={()=>{
+      <StarBorderIcon
+    
+
+      onClick={()=>{
        
        const starred=stars.filter(star=>(star===item))
 
-       starred.length===0? setStarred([...stars,item]):alert("Already starred")
+       starred.length===0? setStarred([...stars,item]):setStarred([...stars])
     
 }}>
-       </StarBorderIcon>:<StarBorderIcon className="clicked"></StarBorderIcon> } 
+       </StarBorderIcon>:<StarBorderIcon className="clicked" 
+        onClick={()=>{
+       
+          const starred=stars.filter(star=>(star!==item))
+   
+          starred.length===0? setStarred([...starred]):setStarred([...stars])
+       
+   }}
+       ></StarBorderIcon> } 
  </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?
     <li className="deleteditem">
       {item }
