@@ -69,14 +69,16 @@ return(<div className="main">
         // const newItems=items.filter((item,ind)=>(ind!==index))
         // setItems(newItems)
     }}>Complete</button>
-     <StarBorderIcon onClick={()=>{
+
+  {      stars.filter(star=>(star===item)).length===0?
+      <StarBorderIcon onClick={()=>{
        
        const starred=stars.filter(star=>(star===item))
 
        starred.length===0? setStarred([...stars,item]):alert("Already starred")
     
 }}>
-       </StarBorderIcon>  
+       </StarBorderIcon>:<StarBorderIcon className="clicked"></StarBorderIcon> } 
  </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?
     <li className="deleteditem">
       {item }

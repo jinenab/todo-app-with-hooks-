@@ -155,7 +155,7 @@ flex-direction: column;
     }
 }
 .MuiSvgIcon-root{
-    fill:gold !important;
+    //fill:gold !important;
     height: 20px;
    
 }
@@ -168,13 +168,18 @@ border: 0px;
 padding: 0px;
 height: 20px;
     }
-    .MuiSvgIcon-root:hover,click{
-  background-color:gold;
-  fill:white !important;
-       }
+    .MuiSvgIcon-root:hover {
+   background-color:white !important;
+fill:gold !important;
+ 
+     }
     
 }
-
+.clicked{
+    background-color:white !important;
+    fill:gold !important;
+  
+      }
 
 .items{
     display: flex;
@@ -196,17 +201,15 @@ height: 20px;
     display: flex;
     flex-direction: row;
    }
-   .MuiSvgIcon-root
-   {    margin: -5px 5px;
- 
-       fill: gold !important;}
-   }
+
   
         }
         .items {
             .deleteditem
-{            text-decoration: line-through;
+{     text-decoration: line-through;
 }
 
 
         }
+
+}
