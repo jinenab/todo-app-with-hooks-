@@ -100,7 +100,10 @@ return(<div className="main">
   visible==="dones"?<ul className="items">
   {dones.length===0? <p>No Dones Yet</p>:
     dones.map((done,index)=>(
-    <li>{done}</li>
+    <li>{done}
+      {stars.filter((star)=>(star===done)).length!==0?  <StarBorderIcon>
+ </StarBorderIcon> :""} 
+    </li>
     ))
   }
   </ul>:""
@@ -109,7 +112,10 @@ return(<div className="main">
   visible==="deleted"?<ul className="items">
   {deleted.length===0? <p>No Deleted Yet</p>:
     deleted.map((del,index)=>(
-    <li>{del}</li>
+    <li>{del}
+          {stars.filter((star)=>(star===del)).length!==0?  <StarBorderIcon>
+ </StarBorderIcon> :""} 
+    </li>
     ))
   }
   </ul>:""
@@ -118,7 +124,10 @@ return(<div className="main">
   visible==="starred"?<ul className="items">
   {stars.length===0? <p>No Starred Yet</p>:
     stars.map((star,index)=>(
-    <li>{star}</li>
+    <li>{star}
+             <StarBorderIcon>
+ </StarBorderIcon>
+    </li>
     ))
   }
   </ul>:""
