@@ -77,10 +77,10 @@ return(<div className="main">
     
 }}>
        </StarBorderIcon>   
-    </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?<li>
+    </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?<li className="deletedTodos">
       <Chip label={item} variant="outlined" clickable size="medium"  />
 
-     </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?<li>
+     </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?<li className="donesTodos">
       <Chip label={item} variant="outlined" clickable size="medium"  />
 
      </li>:""))  
