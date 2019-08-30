@@ -57,10 +57,6 @@ return(<div className="main">
     <button className="Delete" onClick={()=>{
   const newDeleted=items.filter((item,ind)=>(ind===index))
   setDeleted([...newDeleted,...deleted])
-
-    //   const newItems=items.filter((item,ind)=>(ind!==index))
-
-    // setItems(newItems)
     }}>Delete</button>
     <button className="Done" onClick={()=>{
         const newDones=items.filter((item,ind)=>(ind===index))
@@ -70,20 +66,14 @@ return(<div className="main">
 
   {      stars.filter(star=>(star===item)).length===0?
       <StarBorderIcon
-    
-
-      onClick={()=>{
+ onClick={()=>{
        
        const starred=stars.filter(star=>(star===item))
-
-       starred.length===0? setStarred([...stars,item]):setStarred([...stars])
-    
+       starred.length===0? setStarred([...stars,item]):setStarred([...stars]) 
 }}>
        </StarBorderIcon>:<StarBorderIcon className="clicked" 
-        onClick={()=>{
-       
+        onClick={()=>{ 
           const starred=stars.filter(star=>(star!==item))
-   
           starred.length===0? setStarred([...starred]):setStarred([...stars])
        
    }}
@@ -93,13 +83,13 @@ return(<div className="main">
       {item }
 
 {
-  stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon>
+  stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon >
  </StarBorderIcon> :""} 
      </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?
      <li className="doneitem">
 {item}
 {
-  stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon>
+  stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon className="done_starred">
  </StarBorderIcon> :""} 
      </li>:""))  
   }</ul>
@@ -111,7 +101,7 @@ return(<div className="main">
   visible==="dones"?<ul className="items">
   {dones.length===0? <p>No Dones Yet</p>:
     dones.map((done,index)=>(
-    <li>{done}
+    <li className="deleted_started">  {done}
       {stars.filter((star)=>(star===done)).length!==0?  <StarBorderIcon>
  </StarBorderIcon> :""} 
     </li>
@@ -123,7 +113,7 @@ return(<div className="main">
   visible==="deleted"?<ul className="items">
   {deleted.length===0? <p>No Deleted Yet</p>:
     deleted.map((del,index)=>(
-    <li>{del}
+    <li className="deleted_started">{del}
           {stars.filter((star)=>(star===del)).length!==0?  <StarBorderIcon>
  </StarBorderIcon> :""} 
     </li>

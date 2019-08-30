@@ -188,20 +188,14 @@ fill:gold !important;
         width: 320px;
 
    .doneitem{
+   
     display: flex;
     flex-direction: row;
+
+
+    }
+   
    }
-
-  
-        }
-        .items {
-            .deleteditem
-{     
-}
-
-
-        }
-
 }
 
 .deleteditem{
@@ -210,6 +204,18 @@ fill:gold !important;
     text-decoration: line-through;
     .MuiSvgIcon-root{
         fill: gold !important;
-        margin: -5px 6px;
+        margin: -5px 8px;
     }
    }
+
+   .deleted_started{
+ 
+    .MuiSvgIcon-root{
+        fill: gold !important;
+        margin: -5px 8px;
+    }
+   }
+.done_starred{
+    fill: gold !important;
+    margin: -5px 8px;
+}
