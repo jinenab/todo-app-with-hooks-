@@ -187,6 +187,9 @@ height: 20px;
    .deleteditem{
     display: flex;
     flex-direction: row;
+
+
+
   
    }
    .doneitem{
@@ -199,4 +202,11 @@ height: 20px;
        fill: gold !important;}
    }
   
+        }
+        .items {
+            .deleteditem
+{            text-decoration: line-through;
+}
+
+
         }

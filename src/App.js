@@ -77,23 +77,15 @@ return(<div className="main">
     
 }}>
        </StarBorderIcon>  
-
-{/* 
-       <StarBorderIcon>
-       </StarBorderIcon>   */}
-     
-
-
-    </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?
+ </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?
     <li className="deleteditem">
-      {/* <Chip label={item} variant="outlined" clickable size="medium"  /> */}
-{item }
+      {item }
+
 {
   stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon>
  </StarBorderIcon> :""} 
      </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?
      <li className="doneitem">
-      {/* <Chip label={item} variant="outlined" clickable size="medium"  /> */}
 {item}
 {
   stars.filter((star)=>(star===item)).length!==0?  <StarBorderIcon>
@@ -105,7 +97,7 @@ return(<div className="main">
   :""
   }
 {
-  visible==="dones"?<ul>
+  visible==="dones"?<ul className="items">
   {dones.length===0? <p>No Dones Yet</p>:
     dones.map((done,index)=>(
     <li>{done}</li>
@@ -114,7 +106,7 @@ return(<div className="main">
   </ul>:""
 }
 {
-  visible==="deleted"?<ul>
+  visible==="deleted"?<ul className="items">
   {deleted.length===0? <p>No Deleted Yet</p>:
     deleted.map((del,index)=>(
     <li>{del}</li>
@@ -123,7 +115,7 @@ return(<div className="main">
   </ul>:""
 }
 {
-  visible==="starred"?<ul>
+  visible==="starred"?<ul className="items">
   {stars.length===0? <p>No Starred Yet</p>:
     stars.map((star,index)=>(
     <li>{star}</li>
