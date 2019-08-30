@@ -1,6 +1,4 @@
-
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-
 import Chip from '@material-ui/core/Chip';
 import  "./style.scss"
 import React , {useState} from "react"
@@ -45,27 +43,31 @@ return(<div className="main">
     setItem("")
     console.log(items)
   }}>Add</button>
-  </div>:""}
+  </div>: ""}
   {
    visible==="all"?
    <div className="allTodos">
    <ul className="items">{ items.length===0?<p>No Todos To Do</p>  :
     items.map((item,index)=>(
+
+
+   deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===0 ?
+
       <li className="item"  key={index}><div>{item}</div>
     <button className="Delete" onClick={()=>{
   const newDeleted=items.filter((item,ind)=>(ind===index))
   setDeleted([...newDeleted,...deleted])
 
-      const newItems=items.filter((item,ind)=>(ind!==index))
+    //   const newItems=items.filter((item,ind)=>(ind!==index))
 
-    setItems(newItems)
+    // setItems(newItems)
     }}>Delete</button>
     <button className="Done" onClick={()=>{
         const newDones=items.filter((item,ind)=>(ind===index))
   
         setDones([...newDones,...dones])
-        const newItems=items.filter((item,ind)=>(ind!==index))
-        setItems(newItems)
+        // const newItems=items.filter((item,ind)=>(ind!==index))
+        // setItems(newItems)
     }}>Complete</button>
      <StarBorderIcon onClick={()=>{
        
@@ -74,32 +76,31 @@ return(<div className="main">
        starred.length===0? setStarred([...stars,item]):alert("Already starred")
     
 }}>
-    
-    </StarBorderIcon>
-   
-    </li >))
-    
+       </StarBorderIcon>   
+    </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?<li>
+      <Chip label={item} variant="outlined" clickable size="medium"  />
+
+     </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?<li>
+      <Chip label={item} variant="outlined" clickable size="medium"  />
+
+     </li>:""))  
   }</ul>
 
-  <ul className="donesTodos">
+  {/* <ul className="donesTodos">
     {
-     
-     
      dones.map(element=>
      ( <li>
       <Chip label={element} variant="outlined" clickable size="medium"  />
-
      </li>))
       
-     
      }
-  </ul>
-  <ul className="deletedTodos">
+  </ul> */}
+  {/* <ul className="deletedTodos">
     {
      deleted.map(element=>
      ( <li> <Chip label={element} variant="outlined" clickable size="medium"  /></li>))
      }
-  </ul>
+  </ul> */}
   </div>
   :""
   }
