@@ -34,7 +34,7 @@ return(<div className="main">
     <div className="Todocontent">
     {visible==="all"?<div>
     <h1>Todo App</h1>
-    <input value={item} placeholder="Enter a value" onChange={(e)=>{setItem(e.target.value)}}></input>
+    <input   value={item} placeholder="Enter a value" onChange={(e)=>{setItem(e.target.value)}}></input>
     <button className="Add" onClick={()=>{
     let val=items.find(function(element){return element===item})
 
@@ -42,7 +42,15 @@ return(<div className="main">
 
     setItem("")
     console.log(items)
-  }}>Add</button>
+  }}>Add</button> <button className="Reset" onClick={()=>{
+
+setItems([])
+setDones([])
+setDeleted([])
+setStarred([])
+
+
+  }}>Reset Todo</button>
   </div>: ""}
   {
    visible==="all"?
