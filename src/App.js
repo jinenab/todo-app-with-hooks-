@@ -1,5 +1,5 @@
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import Chip from '@material-ui/core/Chip';
+//import Chip from '@material-ui/core/Chip';
 import  "./style.scss"
 import React , {useState} from "react"
 function Todo(){
@@ -76,31 +76,29 @@ return(<div className="main">
        starred.length===0? setStarred([...stars,item]):alert("Already starred")
     
 }}>
-       </StarBorderIcon>   
+       </StarBorderIcon>  
+
+{/* 
+       <StarBorderIcon>
+       </StarBorderIcon>   */}
+     
+
+
     </li >:  deleted.filter((del)=>(del===item)).length===1 &&  dones.filter((done)=>(done===item)).length===0?<li className="deletedTodos">
-      <Chip label={item} variant="outlined" clickable size="medium"  />
-
+      {/* <Chip label={item} variant="outlined" clickable size="medium"  /> */}
+{item }
+{
+  stars.filter((star)=>(star===item).length)!==0?  <StarBorderIcon>
+ </StarBorderIcon> :""} 
      </li> : deleted.filter((del)=>(del===item)).length===0 &&  dones.filter((done)=>(done===item)).length===1 ?<li className="donesTodos">
-      <Chip label={item} variant="outlined" clickable size="medium"  />
-
+      {/* <Chip label={item} variant="outlined" clickable size="medium"  /> */}
+{item}
+{
+  stars.filter((star)=>(star===item).length)!==0?  <StarBorderIcon>
+ </StarBorderIcon> :""} 
      </li>:""))  
   }</ul>
 
-  {/* <ul className="donesTodos">
-    {
-     dones.map(element=>
-     ( <li>
-      <Chip label={element} variant="outlined" clickable size="medium"  />
-     </li>))
-      
-     }
-  </ul> */}
-  {/* <ul className="deletedTodos">
-    {
-     deleted.map(element=>
-     ( <li> <Chip label={element} variant="outlined" clickable size="medium"  /></li>))
-     }
-  </ul> */}
   </div>
   :""
   }
