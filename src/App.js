@@ -20,11 +20,11 @@ return(<div className="main">
 
 </div>
 
-<div className="Filters">
+
 <div className="Dones"><button  onClick={()=>{setVisible("dones")}}>Dones</button></div>
 <div className="Deleted"  onClick={()=>{setVisible("deleted")}}><button>Deleted</button></div>
 <div className="Starred"  onClick={()=>{setVisible("starred")}}><button>Starred</button></div>
-</div>
+
 
 </div>
 
